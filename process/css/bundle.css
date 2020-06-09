@@ -1,0 +1,305 @@
+/*
+    Template Name: OrganicFood - eCommerce Bootstrap4 Template
+    Description: This is html5 template
+    Version: 1.0
+
+*/
+/*================================================
+[  Table of contents  ]
+================================================
+01. General
+02. Page section margin padding 
+05. button
+06. button small
+09. Input
+10. Extra class
+12. loading
+13. Box Layout
+14. Back to top
+15. Basic margin padding
+ 
+======================================
+[ End table content ]
+======================================*/
+
+/*************************
+    General
+*************************/
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+/* img{
+    max-width: 100%;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+} */
+a{
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+a:focus{
+    text-decoration: none;
+    outline: none;
+}
+a:hover {
+  color: #333;
+  text-decoration: none;
+}
+a:focus {
+  color: #333;
+  text-decoration: none;
+}
+a,
+input {
+    outline: medium none;
+    color: #686868;
+}
+input:focus,select:focus,textarea:focus{
+	outline: none;
+}
+.uppercase { 
+    text-transform: uppercase
+}
+.capitalize { 
+    text-transform: capitalize
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+li { list-style: none }
+
+p {
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 26px;
+    color: #807f7f;
+    margin-bottom: 15px;
+ }
+
+hr{
+    margin: 60px 0;
+    padding: 0px;
+    border-bottom: 1px solid #eceff8;
+    border-top: 0px;
+}
+strong{
+    font-weight: bold;
+}
+*::-moz-selection {
+    background: #4fc1f0;
+    color: #fff;
+    text-shadow: none;
+}
+::-moz-selection {
+    background: #4fc1f0;
+    color: #fff;
+    text-shadow: none;
+}
+::selection {
+    background: #4fc1f0;
+    color: #fff;
+    text-shadow: none;
+}
+/***************************
+    transtion
+****************************/
+a.button::after,
+a.button-small::after {
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+.share ul,
+.share:hover ul {
+    transition: all 0.4s ease-in-out;
+    -webkit-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+a.button-border span,
+a.button-border-white span,
+input,
+select,
+textarea {
+    -webkit-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+}
+/*************************
+        Input
+*************************/
+input {
+    background: #eceff8;
+    border: 1px solid #eee;
+    height: 45px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    padding-left: 10px;
+    font-size: 14px;
+    color: #626262;
+    width: 100%;
+}
+input:focus {
+    background: transparent;
+    border: 1px solid #4FC1F0;
+}
+textarea {
+    resize: vertical;
+    background: #eceff8;
+    border: 2px solid #eceff8;
+    padding: 10px;
+    width: 100%;
+    font-size: 14px;
+}
+textarea:focus {
+    background: transparent;
+    border: 2px solid #4FC1F0;
+    outline: none;
+}
+::-moz-placeholder {
+    color: #444;
+}
+.input-group.divcenter.input-group .form-control { padding-left: 0px }
+/*************************
+        back-to-top
+*************************/
+#scrollUp {
+  background: #2f82ff  none repeat scroll 0 0;
+  bottom: 85px;
+  color: #ffffff;
+  cursor: pointer;
+  display: none;
+  font-size: 20px;
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  right: 12px;
+  text-align: center;
+  width: 40px;
+  z-index: 9999;
+}
+#scrollUp:hover {
+    background: #333 none repeat scroll 0 0;
+}
+
+/*************************
+        Extra class
+*************************/
+.pricing .container .row [class*="col-"] { }
+
+
+
+/*Custom cloumn*/
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10 {
+    float: left;
+}
+.col-1{
+    width: 10%;
+}
+.col-2{
+    width: 20%;
+}
+.col-3{
+    width: 30%;
+}
+.col-4{
+    width: 40%;
+}
+.col-5{
+    width: 50%;
+}
+.col-6{
+    width: 60%;
+}
+.col-7{
+    width: 70%;
+}
+.col-8{
+    width: 80%;
+}
+.col-9{
+    width: 90%;
+}
+.col-10{
+    width: 100%;
+}
+ /*************************************
+    Background variation set 
+ **************************************/
+/*colored background*/
+ .white-bg { background: #fff; }
+ .black-bg { background: #252525 }
+ .theme-bg { background: #f4ecea }
+ .gray-bg { background: #f0f1f5; }
+ .blue-bg { background: #4FC1F0; }
+ .default-bg { background: #50C1F0; }
+ .transparent-bg { background: transparent; }
+
+/*Opacity background*/
+/* black overlay */
+[data-overlay] {
+  position: relative;
+} 
+[data-overlay]::before {
+  background: #252525 none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+[data-overlay="3"]::before {
+  opacity: 0.3;
+}
+[data-overlay="4"]::before {
+  opacity: 0.4;
+}
+[data-overlay="5"]::before {
+  opacity: 0.5;
+}
+[data-overlay="56"]::before {
+  opacity: 0.56;
+}
+[data-overlay="6"]::before {
+  opacity: 0.6;
+}
+[data-overlay="7"]::before {
+  opacity: 0.7;
+}
+[data-overlay="8"]::before {
+  opacity: 0.8;
+}
+
+/* white overlay */
+[white-overlay] {
+  position: relative;
+} 
+[white-overlay]::before {
+  background: #fff none repeat scroll 0 0;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+[white-overlay="3"]::before {
+  opacity: 0.3;
+}
+[white-overlay="4"]::before {
+  opacity: 0.4;
+}
+[white-overlay="5"]::before {
+  opacity: 0.3;
+}
+[white-overlay="6"]::before {
+  opacity: 0.6;
+}
+[white-overlay="7"]::before {
+  opacity: 0.8;
+}
+[white-overlay="9"]::before {
+  opacity: 0.9;
+}

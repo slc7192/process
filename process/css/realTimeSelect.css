@@ -1,0 +1,110 @@
+.realcontainer{
+  margin-left: 15px;
+}
+.nav{
+  margin-top: 15px;
+}
+.new_name{
+  width: 95px;
+}
+.select_trunk{
+  display: inline-block;
+  padding-left: 10px;
+  height: 38px;
+  line-height: 1.3;
+  border: 1px solid #e6e6e6;
+  border-radius: 2px;
+  cursor: pointer;
+  width: 190px;
+}
+
+
+.real_body{
+  width: 800px;
+  height: 800px;
+  overflow-y:auto; 
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 5px;
+}
+.real_left_data{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.footer{
+  display: flex;
+  justify-content: center;
+}
+.chart{
+  display: flex;
+  justify-content: flex-start;
+  /* flex-direction: column; */
+  align-items: center
+}
+.chart_pic{
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+.retative_btn{
+  position: relative;
+  left: 6px;
+}
+.chart_btn{
+  margin-bottom: 10px;
+}
+.chart_div{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.chart_items{
+  height: 230px;
+  width: 400px;
+  margin-left: 25px;
+}
+
+/* 图表 */
+#down,#loading,#temperature,#liquid,#gas{
+  width:100%;
+  height: 200px;
+
+}
+.exe{
+  width: 800px;
+  height: 800px;
+  border: 1px solid #cccccc;
+  margin: 10px 5px;
+}
+.contain{
+  display: flex;
+}
+
+h2{
+  display: block;
+  width: 800px;
+  background: #ffffff;
+  z-index: 10000;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 15px;
+}
+.header{
+  width: 800px;
+}
+.rubbish{
+  width: 1630px;
+  margin: 0 auto
+}
+.fullscreen{
+  position: fixed;
+  top: 150px;
+  right: 15px;
+}
+.set_mar{
+  margin-bottom: 2px !important;
+}
+.set_mar_zero{
+  margin-bottom: 0 !important
+}

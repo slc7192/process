@@ -1,0 +1,13 @@
+.new_name{
+  width: 120px;
+}
+.del_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.nav{
+  margin-top: 15px;
+}

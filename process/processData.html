@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>数据处理</title>
+</head>
+
+<body>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据处理</title>
+    <link rel="stylesheet" href="./layui/css/layui.css">
+    <link rel="stylesheet" href='./css/style.css'>
+    <link rel="stylesheet" href="./css/processData.css">
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script src="./js/echarts.js"></script>
+  </head>
+
+  <body>
+    <div class="layui-container   container">
+      <h2 style="margin:15px;">垃圾土室内沉降虚拟仿真实验</h2>
+      <div class="layui-header layui-bg-gray">
+        <ul class="layui-nav  ">
+          <li class="layui-nav-item">
+            <a href="javascript:;">项目管理</a>
+            <dl class="layui-nav-child">
+              <dd><a href="./newProject.html" target="_blank">新建项目</a></dd>
+              <dd><a href="./delProject.HTML" target="_blank">删除项目</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">测试实施</a>
+            <dl class="layui-nav-child">
+              <dd><a href="./setParm.html" target="_blank">参数设置</a></dd>
+              <dd><a href="./realTimeSelect.html" target="_blank">实时采集</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">数据处理</a>
+          </li>
+        </ul>
+      </div>
+      <div class="real_body" style="margin-top:20px;">
+        <div class="left" style="padding-top:0;">
+          <fieldset class="layui-elem-field   column">
+            <legend>数据导入</legend>
+            <div class="layui-form-item">
+              <div class="layui-inline" style="display:flex;margin-top:15px;">
+                <label class=" new_name layui-form-label" style="width:105px;">选择土样:</label>
+                <div class=" layui-input-inline">
+                  <!-- 多选框 -->
+                  <select name="testNumber" class="select_num my_select ">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                  </select>
+                </div>
+              </div>
+              <div class="column">
+                <button class="layui-btn layui-btn-primary mar_bottom mar_top new_data ">导入历史数据</button>
+              </div>
+          </fieldset>
+          <!-- <fieldset class="layui-elem-field fl_column ">
+          <legend class="mar_bottom">数据滤波处理</legend>
+          <div class="layui-form-item">
+            <label class=" new_name layui-form-label">滤波列项:</label>
+            <div class=" inline_div layui-input-inline">
+              <select name="sel" class="select_trunk" >
+                <option value="">液体流量</option>
+                <option value="">沉降位移</option>
+                <option value="">加载压力</option>
+                <option value="">加载温度</option>
+                <option value="">液体流量</option>
+                <option value="">废气量</option>
+              </select>
+            </div>
+          </div>
+          <div class="column" >
+            <button class="layui-btn layui-btn-primary  mar_bottom ">现场数据滤波</button>
+            <button class="layui-btn layui-btn-primary retative_btn  mar_bottom ">保存数据表</button>
+          </div>          
+        </fieldset> -->
+          <!-- <fieldset class="layui-elem-field fl_column ">
+            <legend class="mar_bottom">查询条件</legend>
+            <div class="layui-form-item">
+              <label class=" new_name layui-form-label">X轴:</label>
+              <div class=" inline_div layui-input-inline">
+                <select name="sel" class="select_trunk" >
+                  <option value="">加载时间（分钟）</option>
+                  <option value="">沉降位移（毫米）</option>
+                  <option value="">加载压力（牛顿）</option>
+                  <option value="">加载温度（摄氏度）</option>
+                  <option value="">液体流量（升）</option>
+                  <option value="">废气量（升/小时）</option>
+                </select>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class=" new_name layui-form-label">y轴:</label>
+              <div class=" inline_div layui-input-inline">
+                <select name="sel" class="select_trunk" >
+                  <option value="">加载时间（分钟）</option>
+                  <option value="">沉降位移（毫米）</option>
+                  <option value="">加载压力（牛顿）</option>
+                  <option value="">加载温度（摄氏度）</option>
+                  <option value="">液体流量（升）</option>
+                  <option value="">废气量（升/小时）</option>
+                </select>
+              </div>
+            </div>
+            <div class="layui-form-item">
+              <label class=" new_name layui-form-label">采样间隔:</label>
+              <div class=" inline_div layui-input-inline">
+                <input type="text" name="time_interview"  autocomplete="off" class="layui-input" value="1">
+              </div>
+            </div>
+            <div class="column" >
+              <button class="layui-btn layui-btn-primary  mar_bottom ">绘制曲线</button>
+              <button class="layui-btn layui-btn-primary retative_btn  mar_bottom ">保存当前曲线</button>
+            </div>
+            
+          </fieldset> -->
+          <div class="column">
+            <a href="./writeDocument.html" class="layui-btn layui-btn-primary mar_bottom mar_top " target="_blank" >填写报告</a>
+          </div>
+        </div>
+        <div>
+
+          <fieldset class="layui-elem-field chart_items ">
+            <legend>沉降量</legend>
+            <div id="down"></div>
+          </fieldset>
+
+          <fieldset class="layui-elem-field chart_items  mar_top">
+            <legend>温度</legend>
+            <div id="tem"></div>
+          </fieldset>
+
+          <fieldset class="layui-elem-field chart_items  mar_top">
+            <legend>加载力</legend>
+            <div id="load"></div>
+          </fieldset>
+
+          <fieldset class="layui-elem-field chart_items set_mar_zero ">
+            <legend>液体流量</legend>
+            <div id="liquid"></div>
+          </fieldset>
+          <fieldset class="layui-elem-field chart_items set_mar_zero ">
+            <legend>废气量</legend>
+            <div id="gas"></div>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <script src="./js/jquery-1.12.4.js"></script>
+    <script src="./layui/layui.js"></script>
+    <script src="./js/processData.js"></script>
+    <script src="./js/processDataChart.js"></script>
+    <script src="./js/time.js"></script>
+  </body>
+
+  </html>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+.flex_row{
+  display: flex;
+  justify-content: space-around
+}
+.margin_blank{
+  margin: 10px;
+  width: 95%;
+}
+h3{
+  margin: 5px 50px 10px 10px;
+}
+.margin_bot{
+  margin-bottom: 25px;
+}
+p{
+  margin-left: 10px;
+}

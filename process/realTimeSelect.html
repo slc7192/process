@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>实时采集</title>
+  <!-- <link rel="shortcut icon" href="./TemplateData/favicon.ico"> -->
+  <!-- <link rel="stylesheet" href="./TemplateData/style.css"> -->
+  <!-- <script src="./TemplateData/UnityProgress.js"></script>   -->
+  <script src="Build/UnityLoader.js"></script>
+  <!-- 2 -->
+  <script>
+    var gameInstance = UnityLoader.instantiate("gameContainer", "Build/垃圾土2018.9.6.json");
+  </script>
+
+
+
+  <link rel="stylesheet" href="./layui/css/layui.css">
+  <link rel="stylesheet" href='./css/style.css'>
+  <link rel="stylesheet" href="./css/realTimeSelect.css">
+  <script src="./js/jquery-1.12.4.js"></script>
+  <script src="./js/echarts.js"></script>
+  <script src="./layui/layui.js"></script>
+</head>
+
+<body>
+  <div class="rubbish">
+    <h2>垃圾土室内沉降虚拟仿真实验系统</h2>
+    <div class="layui-header  ">
+      <ul class="layui-nav ">
+        <li class="layui-nav-item">
+          <a href="javascript:;">项目管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="./newProject.html" target="_blank">新建项目</a></dd>
+            <dd><a href="./delProject.HTML" target="_blank">删除项目</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="javascript:;">测试实施</a>
+          <dl class="layui-nav-child">
+            <dd><a href="./setParm.html" target="_blank">参数设置</a></dd>
+            <dd><a href="javascript:;">实时采集</a></dd>
+          </dl>
+        </li>
+        <li class="layui-nav-item">
+          <a href="./processData.html" target="_blank">数据处理</a>
+        </li>
+      </ul>
+      <!-- <div class="fullscreen" onclick="gameInstance.SetFullscreen(1)"></div>         -->
+    </div>
+
+
+    <div class="  contain " style="margin-top: 15px;">
+      <div class="real_body realcontainer">
+        <div class="real_left_data">
+          <fieldset class="layui-elem-field">
+            <legend>项目信息 </legend>
+            <div class="layui-form-item set_mar">
+              <label class=" new_name layui-form-label">项目名称:</label>
+              <div class=" layui-input-inline">
+                <input type="text" name="testName" lay-verify="title" autocomplete="off"  class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item set_mar">
+              <label class=" new_name layui-form-label">项目单位:</label>
+              <div class=" layui-input-inline">
+                <input type="text" name="testUnit" lay-verify="title" autocomplete="off" class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item set_mar">
+              <label class=" new_name layui-form-label">项目编号:</label>
+              <div class=" layui-input-inline">
+                <input type="text" name="testId" lay-verify="title" autocomplete="off"  class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item set_mar">
+              <label class=" new_name layui-form-label">测试时间:</label>
+              <div class=" layui-input-inline">
+                <input type="text" class="layui-input" name="testTime" id="test5" disabled placeholder="请选择时间">
+              </div>
+            </div>
+            <div class="layui-form-item set_mar">
+              <label class=" new_name layui-form-label">测试人员:</label>
+              <div class=" layui-input-inline">
+                <input type="text" name="testMan" lay-verify="title" autocomplete="off"  class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item set_mar">
+              <label class=" new_name layui-form-label">土样:</label>
+              <div class=" layui-input-inline">
+                <input type="text" name="testNumber" lay-verify="title" autocomplete="off"  class="layui-input">
+              </div>
+            </div>
+            <div class="layui-form-item set_mar">
+              <label class=" new_name layui-form-label">选择串口:</label>
+              <div class=" layui-input-inline">
+                <select name="sel" class="select_trunk">
+                  <option value="1">COM1</option>
+                </select>
+              </div>
+            </div>
+            <div class="layui-form-item set_mar">
+              <label class=" new_name layui-form-label">波特率:</label>
+              <div class=" layui-input-inline">
+                <input type="text" name="rate" autocomplete="off" class="layui-input" value="1000">
+              </div>
+            </div>
+            <div class="layui-form-item set_mar">
+              <label class=" new_name layui-form-label">数据位:</label>
+              <div class=" layui-input-inline">
+                <input type="text" name="data_bit" autocomplete="off" class="layui-input" value="10">
+              </div>
+            </div>
+            <div class="layui-form-item footer">
+              <button class="layui-btn layui-btn-primary layui-btn-sm set_project nav ">打开串口</button>
+              <button class="layui-btn layui-btn-primary  layui-btn-sm set_project nav">关闭串口</button>
+            </div>
+          </fieldset>
+          <fieldset class="layui-elem-field">
+            <div class="chart  ">
+              <img class="chart_pic" src="./img/black.jpg" alt="">
+              <button class="layui-btn layui-btn-primary layui-btn-sm chart_btn connect_eq ">连接设备</button>
+            </div>
+          </fieldset>
+          <fieldset class="layui-elem-field">
+            <div class=" nav layui-form-item">
+              <label class="  layui-form-label">计时:</label>
+              <div class=" layui-input-inline">
+                <input type="number" name="data_bit" autocomplete="off" class="layui-input" value="10">
+              </div>
+            </div>
+            <div class="chart_div">
+              <button class="layui-btn layui-btn-primary layui-btn-sm retative_btn  chart_btn start_chart">开始</button>
+              <button class="layui-btn layui-btn-primary layui-btn-sm chart_btn pause_chart">暂停</button>
+              <button class="layui-btn layui-btn-primary layui-btn-sm chart_btn reload_chart">重启</button>
+              <button class="layui-btn layui-btn-primary layui-btn-sm  chart_btn finsh_chart ">结束</button>
+            </div>
+            <div class="layui-form-item layui-form-text">
+              <label class="layui-form-label">备注:</label>
+              <div class="layui-input-block">
+                <textarea placeholder="请输入内容" class="layui-textarea"></textarea>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="chart_one">
+          <fieldset class="layui-elem-field chart_items set_mar_zero ">
+            <legend>沉降量</legend>
+            <div id="down"></div>
+          </fieldset>
+          <fieldset class="layui-elem-field chart_items set_mar_zero ">
+            <legend>加载力</legend>
+            <div id="loading"></div>
+          </fieldset>
+          <fieldset class="layui-elem-field chart_items set_mar_zero ">
+            <legend>温度</legend>
+            <div id="temperature"></div>
+          </fieldset>
+          <fieldset class="layui-elem-field chart_items set_mar_zero ">
+            <legend>液体流量</legend>
+            <div id="liquid"></div>
+          </fieldset>
+          <fieldset class="layui-elem-field chart_items set_mar_zero ">
+            <legend>废气量</legend>
+            <div id="gas"></div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="exe">
+        <div class="webgl-content">
+          <div id="gameContainer" style="width: 800px; height: 800px"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+
+  <script src="./js/mi_chart.js"></script>
+  <script src="./js/exe.js"></script>
+  <script src="./js/realTimeSelect.js"></script>
+  <script src="./js/gettime.js"></script>
+  <script src="./js/time.js"></script>
+	<script>
+		var test5 = document.getElementById('test5')
+		var str  = TIME.Year + '-' + TIME.Month + '-' +TIME.date
+		test5.value = str
+	</script>
+</body>
+
+</html>
